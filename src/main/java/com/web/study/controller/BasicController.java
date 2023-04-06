@@ -28,7 +28,7 @@ public class BasicController {  //restcontroller 데이터 응답 용도 control
 		strList.add("a2");
 		strList.add("a3");
 		
-		if(strList.contains("a")) {
+		if(strList.contains("a5")) {
 			try {
 				throw new RuntimeException("오류");
 			}catch (Exception e) {
@@ -49,7 +49,7 @@ public class BasicController {  //restcontroller 데이터 응답 용도 control
  * param 여러개 formData로 하나 JSON으로 하나
  * 
  * 
- * 과일바구니
+ *
  * 
  */
 

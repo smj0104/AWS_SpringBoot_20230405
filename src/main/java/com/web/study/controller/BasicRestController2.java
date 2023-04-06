@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.web.study.dto.DataResponseDto;
+import com.web.study.dto.ErrorResponseDto;
 import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.Fruit;
 
@@ -54,6 +56,8 @@ public class BasicRestController2 {
 		return ResponseEntity.created(null).body(DataResponseDto.of(fruit));
 	}
 	
+	
+	@GetMapping("/fruitbucket")
 	public ResponseEntity<? extends ResponseDto> fruitbucket(String fruit) {
 		List<String> fruitList = new ArrayList<>();
 		fruitList.add("apple");
@@ -63,9 +67,11 @@ public class BasicRestController2 {
 		fruitList.add("2");
 		
 		if(fruitList.contains(fruit) ) {
-			
+			return ResponseEntity.ok().body(DataResponseDto.of(fruitList));
+		}else {
+			return ResponseEntity.badRequest().body(ErrorResponseDto.of(HttpStatus.INTERNAL_SERVER_ERROR));
 		}
-		return null;
+		
 	}
 	
 }

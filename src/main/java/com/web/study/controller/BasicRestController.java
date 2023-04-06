@@ -56,7 +56,8 @@ public class BasicRestController {
 		System.out.println("데이터 추가");
 		
 		return ResponseEntity.created(null).body(DataResponseDto.of(basicTestDto)); //Dto를 바로 JSON으로 바꿔줌
-	}
+	}							//created에는 uri를 넣어줄수있음(어디로 넘어갈지같은 정보)
+	
 	
 	
 	
