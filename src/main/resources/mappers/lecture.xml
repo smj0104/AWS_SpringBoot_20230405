@@ -9,4 +9,19 @@
 		insert into lecture_mst
 		values(0, #{lecture_name}, #{lecture_price}, #{lecturer_id})
 	</insert>
+	
+		<insert id="registe2" parameterType="com.web.study.domain.entity.LectureRegiste">
+		insert into lecture_registe_mst
+		values(0, #{lecture_id}, #{student_id}, #{registe_date})
+	</insert>
+	
+		<insert id="registe3" parameterType="com.web.study.domain.entity.Lecturer">
+		insert into lecturer_mst
+		values(0, #{name}, #{birth_date})
+	</insert>
+	
+		<insert id="registe4" parameterType="com.web.study.domain.entity.Student">
+		insert into student_mst
+		values(0, #{name}, #{birth_date})
+	</insert>
 </mapper>

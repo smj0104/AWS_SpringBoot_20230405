@@ -7,4 +7,4 @@ spring:
     
 mybatis:
   mapper-locations:
-    - /mappers/*.xml
+    - /mappers/*.xml 
