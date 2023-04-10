@@ -10,4 +10,27 @@
 		values(0, #{lecture_name}, #{lecture_price}, #{lecturer_id})
 	</insert>
 	
+			<select id="getLectureAll" resultType="Lecture">
+		select
+			id,
+			lecture_name,
+			lecture_price,
+			lecturer_id
+		from
+		 	lecture_mst
+	</select>
+	
+				<select id="findLectureById" parameterType="Integer" resultType="Lecture">
+		select
+			id,
+			lecture_name,
+			lecture_price,
+			lecturer_id
+		from
+		 	lecture_mst
+		where
+			id = #{id}
+	</select>
+	
+	
 </mapper>
