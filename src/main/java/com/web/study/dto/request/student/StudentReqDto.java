@@ -1,4 +1,4 @@
-package com.web.study.dto.request.lecture;
+package com.web.study.dto.request.student;
 
 import java.time.LocalDate;
 
