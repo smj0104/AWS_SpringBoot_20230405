@@ -2,25 +2,37 @@ package com.web.study.domain.entity;
 
 import com.web.study.dto.response.LectureRespDto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Builder
 @Getter
-@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Lecture {
-	private int id;
-	private String lecture_name;
-	private int lecture_price;
-	private int lecturer_id;
+	private int ltm_id;
+	private String ltm_name;
+	private int ltm_price;
+	private int itm_id;
+	private Instructor instructor;
+	
 	
 	public LectureRespDto toDto() {
+
+		String instructorName = null;
+		
+		if(instructor != null) {  //instructor가 null이면 get할수없기에 먼저 검사
+			instructorName = instructor.getItm_name();
+		}
+
 		return LectureRespDto.builder()
-				.id(id)
-				.lectureName(lecture_name)
-				.lecturePrice(lecture_price)
-				.lecturerId(lecturer_id)
+				.lectureid(ltm_id)
+				.lectureName(ltm_name)
+				.lecturePrice(ltm_price)
+				.instructorName(instructorName)
 				.build();
 	}
 }

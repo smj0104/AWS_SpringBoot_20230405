@@ -1,14 +1,17 @@
 package com.web.study.dto.response;
 
+import java.time.LocalDate;
+
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
-public class LectureRespDto {
-	private int lectureid;
+public class CourseRespDto {
+	private int courseid;
+	private LocalDate registeDate;
 	private String lectureName;
 	private int lecturePrice;
-	private int instructorId;
 	private String instructorName;
+	private String studentName;
 }

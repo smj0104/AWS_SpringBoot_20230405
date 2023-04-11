@@ -41,4 +41,11 @@ public class LectureController {
 		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureByID(id)));
 	
 	}
+	
+	//searchlecture (수강목록이 아닌 강의만 검색하기) entity에서 toDto만들기  검색옵션= /1강의명조회 2강사조회
+	
+	@GetMapping("/search/lectures")
+	public ResponseEntity<? extends ResponseDto> searchLecture(int type, String searchValue) {  //아예 안넣으면 null 값을 안넣으면 공백
+		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.searchLecture(type, searchValue)));
+	}
 }
