@@ -29,7 +29,7 @@ public class Lecture {
 		}
 
 		return LectureRespDto.builder()
-				.lectureid(ltm_id)
+				.lectureId(ltm_id)
 				.lectureName(ltm_name)
 				.lecturePrice(ltm_price)
 				.instructorName(instructorName)

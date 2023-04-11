@@ -6,9 +6,8 @@ import lombok.Getter;
 @Builder
 @Getter
 public class LectureRespDto {
-	private int lectureid;
+	private int lectureId;
 	private String lectureName;
 	private int lecturePrice;
-	private int instructorId;
 	private String instructorName;
 }
