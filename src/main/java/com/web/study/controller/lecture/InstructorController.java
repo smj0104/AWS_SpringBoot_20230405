@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.study.aop.annotation.TimerAspect2;
 import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.instructor.InstructorReqDto;
@@ -29,6 +30,7 @@ public class InstructorController {
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
 	//read
+	@TimerAspect2
 	@GetMapping("/instructors")
 	public ResponseEntity<? extends ResponseDto> getInstructors(){
 	

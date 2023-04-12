@@ -8,11 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Builder
 @Getter
 @NoArgsConstructor //들어오면 allargs는 사라짐` xml의 resultmap사용시 필요함
 @AllArgsConstructor
+@ToString
 public class Course {  //property는 변수명 column은 데이터베이스명
 	private int csm_id;
 	private int ltm_id;

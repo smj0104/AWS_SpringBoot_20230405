@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.study.aop.annotation.CheckNameAspect;
 import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.student.StudentReqDto;
@@ -28,7 +29,7 @@ public class StudentController {
 		studentService.registeStudent(studentReqDto);
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
-	
+	@CheckNameAspect
 	@GetMapping("/students")
 	public ResponseEntity<? extends ResponseDto> getStudents(){
 		

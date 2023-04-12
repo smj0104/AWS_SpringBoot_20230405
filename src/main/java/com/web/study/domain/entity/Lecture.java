@@ -12,6 +12,7 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Lecture {
 	private int ltm_id;
 	private String ltm_name;

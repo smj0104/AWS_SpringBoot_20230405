@@ -14,6 +14,7 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Instructor {
 	private int itm_id;
 	private String itm_name;
