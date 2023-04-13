@@ -9,4 +9,5 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD}) 
 public @interface TimerAspect2 {
 	//ResponseEntity<	>  HTTP 통신 DB가 중요
+	
 }
