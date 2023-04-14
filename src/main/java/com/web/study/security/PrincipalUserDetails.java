@@ -30,7 +30,6 @@ public class PrincipalUserDetails implements UserDetails {
 			authorities.add(new SimpleGrantedAuthority(role));
 		});
 		
-		
 		return authorities;
 	}
 

@@ -23,10 +23,10 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class AuthServiceImpl implements AuthService {
+public class AuthServiceImpl implements AuthService {  //컨트롤러한테 다시 jwt토큰리턴 ,컨트롤러가 클라이언트한테 응답
 
 	private final UserRepository userRepository;
-	private final AuthenticationManagerBuilder authenticationManagerBuilder;
+	private final AuthenticationManagerBuilder authenticationManagerBuilder; 
 	private final JwtTokenProvider jwtTokenProvider;
 
 	@Override
@@ -58,9 +58,9 @@ public class AuthServiceImpl implements AuthService {
 	public JwtTokenResponseDto login(LoginReqDto loginReqDto) {
 		
 		UsernamePasswordAuthenticationToken authenticationToken =
-				new UsernamePasswordAuthenticationToken(loginReqDto.getUsername(), loginReqDto.getPassword());
+				new UsernamePasswordAuthenticationToken(loginReqDto.getUsername(), loginReqDto.getPassword());	
 		
-		//UserDetailsService의 loadUserByUsername() 호출이 된다
+		//UserDetailsService의 loadUserByUsername() 호출이 된다  Authentication = //로그인에 대한 처리   authenticationManagerBuilder.getObject()호출이 authenticationmanager객체를 불러옴
 		Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);	//로그인 정보를 authenticaion 안에서 관리 //내부적인거라 뜯어봐도 뭐 없다
 				//provider의 createtoken에 넣어준다
 		return jwtTokenProvider.createToken(authentication);
