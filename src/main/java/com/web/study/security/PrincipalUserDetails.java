@@ -13,7 +13,7 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class PrincipalUserDetails implements UserDetails {
+public class PrincipalUserDetails implements UserDetails {	//인터페이스를 반환할 수 없기에 구현해놓음
 
 
 	private static final long serialVersionUID = -1913596722176708482L;
